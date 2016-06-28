@@ -4,31 +4,24 @@ if ("geolocation" in navigator) {
     console.log("Bummer! No geolocation!");
 }
 
-if (navigator.geolocation) {
-  var timeoutVal = 10 * 1000 * 1000;
-  navigator.geolocation.getCurrentPosition(
-    displayPosition,
-    // displayError,
-    { enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 0 }
-  );
-}
-else {
-  alert("Geolocation is not supported by this browser");
-}
 
-function displayPosition(position) {
-  alert("Latitude: "
-        + position.coords.latitude
-        + ", Longitude: "
-        + position.coords.longitude);
+function getLocation() {
+  var crd = {
+    latitude: 0,
+    longitude: 0
+  };
+  var options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+  };
+  navigator.geolocation.getCurrentPosition(function(pos) {
+    crd.latitude = pos.coords.latitude;
+    crd.longitude = pos.coords.longitude;
+  },
+  function(error) {
+    console.log("Weather error, Bitch.")
+  }, options);
+
+return crd;
 }
-
-// navigator.geolocation.getCurrentPosition(function(position) {
-//   do_something(position.coords.latitude, position.coords.longitude);
-//   console.log("Where You At");
-// });
-
-// var watchID = navigator.geolocation.watchPosition(function(position) {
-//   do_something(position.coords.latitude, position.coords.longitude);
-//   console.log("I be watchin' yo azz");
-// });
