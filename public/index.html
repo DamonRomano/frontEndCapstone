@@ -12,7 +12,7 @@
   >
     <div ng-controller="metricsController">
       <h1>{{myWelcome}}</h1>
-      <div>It's {{tempFlavor}}, {{humidityFlavor}} and {{windFlavor}}!</div>
+      <div>It's {{tempFlavor}} {{humidityFlavor}} {{windFlavor}}</div>
     </div>
 
     <!-- Dependencies -->
@@ -20,6 +20,7 @@
     <script src="lib/angular-route/angular-route.min.js"></script>
     <!-- Local Scripts -->
     <script src="scripts/main.js"></script>
+    <script src="scripts/geolocation.js"></script>
     <script src="scripts/flavor.js"></script>
     <script src="scripts/theme.js"></script>
   </body>
