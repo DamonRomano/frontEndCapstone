@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bona Terra</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Your Room</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css"/>
   </head>
   <body class="{{bodyStyle}}" ng-controller="bodyController" ng-app="weatherStoryApp">
     <div ng-controller="metricsController">
       <div ngView>
-        <h1>{{myWelcome}}</h1>
+        <h1>{{myMorningText}} -or- {{myMiddayText}} -or- {{myNightText}}</h1>
         <div>
-          <a  href="room.html"
+          <a  href="crone.html"
               class="btn btn-default btn-md active"
               role="button"
-          >   wake up
+          >   visit the Old Crone
+          </a>
+          <a  href="index.html"
+              class="btn btn-default btn-md active"
+              role="button"
+          >   go home
           </a>
         </div>
         <div>{{tempFlavor}}{{humidityFlavor}}{{windFlavor}}</div>
       </div>
     </div>
-
-    <!-- Dependencies -->
-    <script src="lib/angular/angular.min.js"></script>
-    <script src="lib/angular-route/angular-route.min.js"></script>
-    <!-- Local Scripts -->
-    <script src="scripts/main.js"></script>
-    <script src="scripts/welcomeMsg.js"></script>
-    <script src="scripts/timeOfDayMsg.js"></script>
-    <script src="scripts/croneShop.js"></script>
-    <script src="scripts/flavor.js"></script>
-    <script src="scripts/theme.js"></script>
   </body>
 </html>
