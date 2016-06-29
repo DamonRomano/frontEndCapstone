@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bona Terra</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css"/>
-    <title>Bona Terra</title>
   </head>
   <body
     ng-app="weatherStoryApp"
@@ -12,7 +13,11 @@
   >
     <div ng-controller="metricsController">
       <h1>{{myWelcome}}</h1>
-      <div>It's {{tempFlavor}} {{humidityFlavor}} {{windFlavor}}</div>
+      <div>
+        <button type="button" class="btn btn-default btn-sm">wake up</button>
+      </div>
+
+      <div>{{tempFlavor}}{{humidityFlavor}}{{windFlavor}}</div>
     </div>
 
     <!-- Dependencies -->
