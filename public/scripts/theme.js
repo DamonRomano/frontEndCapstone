@@ -1,4 +1,4 @@
-angular.module('weatherStoryApp')
+angular.module('app')
 
 function getTheme(hour) {
   if (hour > 6 && hour <= 10) return "morning";

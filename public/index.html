@@ -6,30 +6,26 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css"/>
   </head>
-  <body class="{{bodyStyle}}" ng-controller="bodyController" ng-app="weatherStoryApp">
-    <div ng-controller="metricsController">
-      <div ngView>
-        <h1>{{myWelcome}}</h1>
-        <div>
-          <a  href="room.html"
-              class="btn btn-default btn-md active"
-              role="button"
-          >   wake up
-          </a>
-        </div>
-        <div>{{tempFlavor}}{{humidityFlavor}}{{windFlavor}}</div>
-      </div>
-    </div>
+  <body ng-app="app">
+    <div ng-view></div>
 
     <!-- Dependencies -->
+    <script src="lib/jquery/dist/jquery.min.js"></script>
     <script src="lib/angular/angular.min.js"></script>
     <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="lib/firebase/firebase.js"></script>
+
     <!-- Local Scripts -->
     <script src="scripts/main.js"></script>
-    <script src="scripts/welcomeMsg.js"></script>
-    <script src="scripts/timeOfDayMsg.js"></script>
-    <script src="scripts/croneShop.js"></script>
-    <script src="scripts/flavor.js"></script>
-    <script src="scripts/theme.js"></script>
+    <script src="scripts/config.js"></script>
+
+    <!-- Controllers -->
+    <script src="controllers/dreamController.js"></script>
+    <script src="controllers/weatherController.js"></script>
+    <!-- <script src="controllers/authController.js"></script> -->
+
+    <!-- Factories -->
+    <script src="factories/weatherFactory.js"></script>
+    <!-- <script src="factories/authFactory.js"></script> -->
   </body>
 </html>

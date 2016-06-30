@@ -1,16 +1,10 @@
-angular.module('weatherStoryApp')
+angular.module('app')
 
 function getRandomItem(strings) {
   var len = strings.length;
 
   var randomTimeOfDayString =
       strings[Math.floor(Math.random() * len)];
-
-  // var r =  Math.floor( Math.random() * 10 );
-  // while (r > len) {
-  //     if (r > len) r = r - len;
-  // }
-  // r = Math.max(r - 1, 0);
 
   return strings[randomTimeOfDayString];
 
