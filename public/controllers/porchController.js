@@ -9,6 +9,7 @@ app.controller('PorchController', function($scope, $http, $location, $timeout, W
 
       // Flavor Texts for temperature, humidity, and Wind.
       function getTempFlavor(t) {
+        console.log("TTT", t);
         if (t < 32) return "It's freezing out here,";
         else if (t > 32 && t <= 45) return "Cold out here,";
         else if (t > 45 && t <= 60) return "Cool out today,";
@@ -17,19 +18,19 @@ app.controller('PorchController', function($scope, $http, $location, $timeout, W
         else if (t > 85 && t <= 96) return "Hot out here;";
         else if (t > 96 && t <= 102) return "Ugh. It's unbearably hot out here...";
         else return "It is so hot as to be inhospitible to human life...";
-        console.log("TTT", t);
       };
 
       function getHumidityFlavor(h) {
+        console.log("HHH", h);
         if (h <= 20) return " mummifyingly arid";
         else if (h > 20 && h <= 40) return " dry";
         else if (h > 40 && h <= 60) return " not too humid";
         else if (h > 60 && h <= 80) return " a bit muggy";
         else return " like breathing through a wet rag";
-        console.log("HHH", h);
       };
 
       function getWindFlavor(w) {
+        console.log("WWW", w);
         if (w < 1) return ", and dead calm."
         else if (w > 1 && w <= 3) return ", and a light air barely stirs the trees.";
         else if (w > 3 && w <= 7) return "; a light breeze takes the edge off, but you wish for more.";
@@ -43,7 +44,6 @@ app.controller('PorchController', function($scope, $http, $location, $timeout, W
         else if (w > 54 && w <= 63) return ". Storm is nigh. Roads aren't safe.";
         else if (w > 63 && w <= 72) return ". A violent storm comes hard up upon you. Ought to get inside.";
         else return ". A hurricane! Board the windows! Hide!";
-        console.log("WWW", w);
       };
       WeatherFactory.init();
         $timeout();
@@ -53,10 +53,11 @@ app.controller('PorchController', function($scope, $http, $location, $timeout, W
           porch.tempFlavor = getTempFlavor(porch.weather.temp);
           porch.humidityFlavor = getHumidityFlavor(porch.weather.humidity);
           porch.windFlavor = getWindFlavor(porch.weather.wind);
+        });
+
         $scope.tempFlavor = getTempFlavor(temp);
         $scope.humidityFlavor = getHumidityFlavor(humidity);
         $scope.windFlavor = getWindFlavor(wind);
-        });
 
 
 
