@@ -1,5 +1,6 @@
-app.controller('DreamController', function($scope, $timeout, $location) {
+app.controller('DreamController', function($scope, $timeout, $location, WeatherFactory) {
   const dream = this
+  let weather;
     var strings =
     [
       '"Welcome, Blue Valk"...no, wait. Not that again.',
@@ -18,6 +19,8 @@ app.controller('DreamController', function($scope, $timeout, $location) {
   dream.navigation = function(locationString) {
     $location.path('/' + locationString)
   };
+
+  WeatherFactory.init()
 
 });
 

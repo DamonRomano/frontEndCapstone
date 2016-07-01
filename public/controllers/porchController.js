@@ -1,16 +1,15 @@
-// This WeatherController is the controller for porch.html and crone.html.
-app.controller('WeatherController', function($scope, $http, $location) {
-  const dream = this
-    var weather =
+app.controller('PorchController', function($scope, $http, $location, $timeout, WeatherFactory) {
+  const porch = this
 
       // Time-Of-Day bacground color themes.
-      function initBody($scope, $http) {
-          var dt = new Date();
-          $scope.bodyStyle = getTheme(dt.getHours());
+      // function initBody($scope, $http) {
+      //     var dt = new Date();
+      //     $scope.bodyStyle = getTheme(dt.getHours());
       };
 
       // Flavor Texts for temperature, humidity, and Wind.
       function getTempFlavor(t) {
+        console.log("t", t);
         if (t < 32) return "It's freezing out here,";
         else if (t > 32 && t <= 45) return "Cold out here,";
         else if (t > 45 && t <= 60) return "Cool out today,";
@@ -22,6 +21,7 @@ app.controller('WeatherController', function($scope, $http, $location) {
       };
 
       function getHumidityFlavor(h) {
+        console.log("h", h);
         if (h <= 20) return " mummifyingly arid";
         else if (h > 20 && h <= 40) return " dry";
         else if (h > 40 && h <= 60) return " not too humid";
@@ -30,6 +30,7 @@ app.controller('WeatherController', function($scope, $http, $location) {
       };
 
       function getWindFlavor(w) {
+        console.log("w", w);
         if (w < 1) return ", and dead calm."
         else if (w > 1 && w <= 3) return ", and a light air barely stirs the trees.";
         else if (w > 3 && w <= 7) return "; a light breeze takes the edge off, but you wish for more.";
@@ -44,11 +45,22 @@ app.controller('WeatherController', function($scope, $http, $location) {
         else if (w > 63 && w <= 72) return ". A violent storm comes hard up upon you. Ought to get inside.";
         else return ". A hurricane! Board the windows! Hide!";
       };
+      WeatherFactory.init()
+        $timeout()
+      porch.weather = WeatherFactory.getWeather();
+        $timeout.then(function() {
+        //may ahve to do this with ptomises...
+          porch.tempFlavor = getTempFlavor(porch.weather.temp);
+          porch.humidityFlavor = getHumidityFlavor(porch.weather.humidity);
+          porch.windFlavor = getWindFlavor(porch.weather.wind);
+        })
+      porch.dreamNavigation = function() {
+        $location.path("/dream")
+        $timeout()
+      };
+      porch.croneNavigation = function() {
+        $location.path("/crone")
+        $timeout()
+      };
 
-      porch.navigation = function(locationString) {
-        $location.path('/' + locationString)
-      };
-      crone.navigation = function(locationString) {
-        $location.path('/' + locationString)
-      };
 });

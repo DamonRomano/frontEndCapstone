@@ -8,12 +8,12 @@ app.config (($routeProvider) => {
   .when('/porch', {
     templateUrl: 'partials/porch.html',
     controller: 'WeatherController',
-    controllerAs: 'porch'
+    controllerAs: 'porchcrone'
   })
   .when('/crone', {
     templateUrl: 'partials/crone.html',
     controller: 'WeatherController',
-    controllerAs: 'crone'
+    controllerAs: 'porchcrone'
   })
   .otherwise('/')
 })
