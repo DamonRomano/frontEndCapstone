@@ -14,12 +14,12 @@ app.factory('WeatherFactory', function($http) {
               + position.coords.longitude
               + ".json";
         touchApi(storedUrl)
-      })
+      });
     },
     getWeather: () => {
       return weather
-    }
-  }
+    },
+  };
 
   function touchApi(url) {
       $http
@@ -27,16 +27,13 @@ app.factory('WeatherFactory', function($http) {
       .then(function(response) {
         console.log("response", response);
         var data = response.data;
-        // var weather = {}
           weather.temp = parseInt(data.current_observation.temp_f);
           weather.humidity = parseInt(data.current_observation.relative_humidity);
           weather.wind = parseInt(data.current_observation.wind_mph);
           console.log("weather", weather);
-        // return weather
 
-        // $scope.tempFlavor = getTempFlavor(temp);
-        // $scope.humidityFlavor = getHumidityFlavor(humidity);
-        // $scope.windFlavor = getWindFlavor(wind);
+          // Can't have $scope on factories!!
+
       });
-  }
+  };
 }); //end factory

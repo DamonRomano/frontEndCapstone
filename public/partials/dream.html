@@ -3,10 +3,14 @@
   <!-- dream flavor text here -->
   <p>{{dream.myWelcome}}</p>
 
-  <!-- button returns user to Porch where current local conditions are displayed -->
+  <!-- button sends user to Porch where current local conditions are displayed -->
+  <!-- <button class="btn btn-default btn-md active"
+          ng-click="dream.navigation('room')">
+      Wake Up
+  </button> -->
   <button class="btn btn-default btn-md active"
-          ng-click="dream.navigation('porch')">
-      Venture Outside
+          ng-click="dream.navigation('porch')"><!--This click should cause fade-in of the {{myMorningText}}, {{myMiddayText}}, or {{myNightText}}, as appropraite for the time of day.  It should also cause the "Venture Outside" btn to fade-in. Should these be on a new page/partial? -->
+      Wake Up
   </button>
 
 </div>

@@ -7,13 +7,13 @@ app.config (($routeProvider) => {
   })
   .when('/porch', {
     templateUrl: 'partials/porch.html',
-    controller: 'WeatherController',
-    controllerAs: 'porchcrone'
+    controller: 'PorchController',
+    controllerAs: 'porch'
   })
   .when('/crone', {
     templateUrl: 'partials/crone.html',
-    controller: 'WeatherController',
-    controllerAs: 'porchcrone'
+    controller: 'CroneController',
+    controllerAs: 'crone'
   })
   .otherwise('/')
 })
