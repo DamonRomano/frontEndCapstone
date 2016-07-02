@@ -55,19 +55,12 @@ app.controller('PorchController', function($scope, $http, $location, $timeout, W
           porch.windFlavor = getWindFlavor(porch.weather.wind);
         });
 
-        $scope.tempFlavor = getTempFlavor(temp);
-        $scope.humidityFlavor = getHumidityFlavor(humidity);
-        $scope.windFlavor = getWindFlavor(wind);
+        // $scope.tempFlavor = getTempFlavor(temp);
+        // $scope.humidityFlavor = getHumidityFlavor(humidity);
+        // $scope.windFlavor = getWindFlavor(wind);
 
-
-
-      porch.navigation = function() {
-        $location.path("/dream")
-        // $timeout()
-      };
-      porch.navigation = function() {
-        $location.path("/crone")
-        // $timeout()
+      porch.navigation = function(locationString) {
+        $location.path(locationString)
       };
 
 });
