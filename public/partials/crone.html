@@ -1,3 +1,4 @@
+
 <div>
   <p>You walk down the dusty path from your home near the edge of the village. 'Fore long, the path begins to trace the edge of a yellow wood. About a quarater-mile from home now and the path diverges; one road into the wood, th'other wraps back around to the crazy old milkman's place.</p>
 
@@ -20,23 +21,15 @@
   <p>
     <!-- On click, fade-in 3-Day forecast. -->
     <button class="btn btn-default btn-md active"
-            ng-click="">
-        Minor Potion of Foretelling.
-    </button>
-  </p>
-
-  <p>
-    <!-- On click, fade-in 10-day forecast. -->
-    <button class="btn btn-default btn-md active"
-            ng-click="">
-        Major Draught of Foretelling.
+            ng-click="crone.drinkPotion()">
+        Potion of Foretelling.
     </button>
   </p>
 
   <p>
     <!-- On click, input field appears.  User enters "City, ST" to speak to the talisman and get current conditions in that city. -->
     <button class="btn btn-default btn-md active"
-            ng-click="">
+            ng-click="crone.useTalisman()">
         Talisman of Far-Seeing.
     </button>
   </p>
@@ -48,4 +41,5 @@
         This place is creepy. I'm going back home to sit on the porch.
     </button>
   </p>
+  <div>{{threeDayForecast}}</div>
 </div>

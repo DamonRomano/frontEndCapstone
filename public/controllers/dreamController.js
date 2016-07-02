@@ -1,7 +1,9 @@
+var testPromise;
+
 app.controller('DreamController', function($scope, $timeout, $location, WeatherFactory) {
   const dream = this
-  let weather;
-    var strings =
+
+  var strings =
     [
       '"Welcome, Blue Valk"...no, wait. Not that again.',
       'TETSUOOOoooo!!!!!11!!',
@@ -14,13 +16,14 @@ app.controller('DreamController', function($scope, $timeout, $location, WeatherF
 
     var len = strings.length;
       dream.myWelcome = strings[Math.floor(Math.random() * len)];
-      $timeout()
+
+
+    // var promise = WeatherFactory.getCurrentPosition().then(WeatherFactory.getWeatherPromise);
+    // testPromise = promise;
 
   dream.navigation = function(locationString) {
     $location.path('/' + locationString)
   };
-
-  WeatherFactory.init()
 
 });
 

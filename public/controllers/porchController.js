@@ -9,8 +9,7 @@ app.controller('PorchController', function($scope, $http, $location, $timeout, W
 
       // Flavor Texts for temperature, humidity, and Wind.
       function getTempFlavor(t) {
-        console.log("TTT", t);
-        if (t < 32) return "It's freezing out here,";
+        if (t <= 32) return "It's freezing out here,";
         else if (t > 32 && t <= 45) return "Cold out here,";
         else if (t > 45 && t <= 60) return "Cool out today,";
         else if (t > 60 && t <= 72) return "Mild.  Nice, but";
@@ -21,7 +20,6 @@ app.controller('PorchController', function($scope, $http, $location, $timeout, W
       };
 
       function getHumidityFlavor(h) {
-        console.log("HHH", h);
         if (h <= 20) return " mummifyingly arid";
         else if (h > 20 && h <= 40) return " dry";
         else if (h > 40 && h <= 60) return " not too humid";
@@ -30,8 +28,7 @@ app.controller('PorchController', function($scope, $http, $location, $timeout, W
       };
 
       function getWindFlavor(w) {
-        console.log("WWW", w);
-        if (w < 1) return ", and dead calm."
+        if (w <= 1) return ", and dead calm."
         else if (w > 1 && w <= 3) return ", and a light air barely stirs the trees.";
         else if (w > 3 && w <= 7) return "; a light breeze takes the edge off, but you wish for more.";
         else if (w > 7 && w <= 12) return " and...ah!...here is a gentle breeze. Simple pleasures, indeed.";
@@ -45,19 +42,12 @@ app.controller('PorchController', function($scope, $http, $location, $timeout, W
         else if (w > 63 && w <= 72) return ". A violent storm comes hard up upon you. Ought to get inside.";
         else return ". A hurricane! Board the windows! Hide!";
       };
-      WeatherFactory.init();
-        $timeout();
-      porch.weather = WeatherFactory.getWeather();
-        $timeout().then(function() {
-        //may have to do this with promises...Ugh
-          porch.tempFlavor = getTempFlavor(porch.weather.temp);
-          porch.humidityFlavor = getHumidityFlavor(porch.weather.humidity);
-          porch.windFlavor = getWindFlavor(porch.weather.wind);
-        });
 
-        // $scope.tempFlavor = getTempFlavor(temp);
-        // $scope.humidityFlavor = getHumidityFlavor(humidity);
-        // $scope.windFlavor = getWindFlavor(wind);
+    WeatherFactory.getConditions().then(function(val) {
+      porch.temperature = getTempFlavor(val.data.current_observation.feelslike_f);
+      porch.humidity = getHumidityFlavor(val.data.current_observation.relative_humidity.replace('%',''));
+      porch.wind = getWindFlavor(val.data.current_observation.wind_mph);
+    });
 
       porch.navigation = function(locationString) {
         $location.path(locationString)
