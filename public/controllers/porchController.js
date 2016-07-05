@@ -43,6 +43,7 @@ app.controller('PorchController', function($scope, $http, $location, $timeout, W
         else return ". A hurricane! Board the windows! Hide!";
       };
 
+
     WeatherFactory.getConditions().then(function(val) {
       porch.temperature = getTempFlavor(val.data.current_observation.feelslike_f);
       porch.humidity = getHumidityFlavor(val.data.current_observation.relative_humidity.replace('%',''));

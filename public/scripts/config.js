@@ -15,5 +15,9 @@ app.config (($routeProvider) => {
     controller: 'CroneController',
     controllerAs: 'crone'
   })
+  .when('/potion', {
+    templateUrl: 'partials/potion.html',
+    controller: 'PotionController'
+  })
   .otherwise('/')
 })
