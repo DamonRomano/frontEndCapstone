@@ -1,24 +1,10 @@
 body {
   font-family: "Times New Roman", serif;
-  font-size: 1.5em;
+  font-size: 2.25em;
   padding: 15px;
+  margin: 15px 0px 15px 0px;
 }
 
 h1 {
   font-size: 1.5em;
-}
-
-.morning {
-  color: black;
-  background-color : pink;
-}
-
-.midday {
-  color: black;
-  background-color: tomato;
-}
-
-.night {
-  color: white;
-  background-color: navy;
 }

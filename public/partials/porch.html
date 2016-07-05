@@ -1,17 +1,21 @@
-<div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <!-- porch. user sees current local weather conditions -->
+      <p>{{porch.temperature}}{{porch.humidity}}{{porch.wind}}</p>
+    </div>
+    <div>
+      <!-- button sends user back inside from porch. Basically allows user to see another random dream flavor text. -->
+      <button class="btn btn-default btn-md active"
+              ng-click="porch.navigation('dream')">
+          Go Back to Bed
+      </button>
 
-  <!-- porch. user sees current local weather conditions -->
-  <p>{{porch.temperature}}{{porch.humidity}}{{porch.wind}}</p>
-
-  <!-- button sends user back inside from porch. Basically allows user to see another random dream flavor text. -->
-  <button class="btn btn-default btn-md active"
-          ng-click="porch.navigation('dream')">
-      Go Back to Bed
-  </button>
-
-  <!-- button sends user to Crone where user can get local forecasts (3-day and 10-day) and current conditions in other cities via talisman input. -->
-  <button class="btn btn-default btn-md active"
-          ng-click="porch.navigation('crone')">
-      Visit the Old Crone
-  </button>
+      <!-- button sends user to Crone where user can get local forecasts (3-day and 10-day) and current conditions in other cities via talisman input. -->
+      <button class="btn btn-default btn-md active"
+              ng-click="porch.navigation('crone')">
+          Visit the Old Crone
+      </button>
+    </div>
+  </div>
 </div>

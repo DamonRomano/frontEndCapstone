@@ -11,11 +11,12 @@ app.controller('CroneController', function($scope, $http, $location, $timeout, W
     WeatherFactory.getForecast().then(function(val) {
       var days = val.data.forecast.txt_forecast.forecastday;
       var forecastBlocks = getThreeDayForecastList(days);
-      crone.threeDayForecast = forecastBlocks;
+      crone.forecast = forecastBlocks;
     });
   };
 
   crone.useTalisman = function() {
+    WeatherFactory
     alert('I used the talisman!');
   };
 

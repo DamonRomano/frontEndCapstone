@@ -38,13 +38,15 @@ app.factory('WeatherFactory', function($q, $http, $timeout) {
 
     function getData(position, endpoint) {
         var key = "6267343012ed6255";
-        var url = "http://api.wunderground.com/api/" +
-            key +
-            "/" + endpoint + "/q/" +
-            position.coords.latitude +
-            "," +
-            position.coords.longitude +
-            ".json";
+        var url = "http://api.wunderground.com/api/"
+                  + key
+                  + "/"
+                  + endpoint
+                  + "/q/"
+                  + position.coords.latitude
+                  + ","
+                  + position.coords.longitude
+                  + ".json";
         return $http.get(url);
     }
 
@@ -52,8 +54,13 @@ app.factory('WeatherFactory', function($q, $http, $timeout) {
         getConditions: () => {
             if (!conditionsPromise) {
                 var deferred = $q.defer();
-                getCurrentPosition().then(function(val) { return getWeatherPromise(val, 'conditions', conditionsDataPromise); })
-                  .then(function(val) { deferred.resolve(val);})
+                getCurrentPosition()
+                  .then(function(val) {
+                    return getWeatherPromise(val, 'conditions', conditionsDataPromise);
+                  })
+                  .then(function(val) {
+                    deferred.resolve(val);
+                  })
                 conditionsPromise = deferred.promise;
             }
             return conditionsPromise;
@@ -61,12 +68,17 @@ app.factory('WeatherFactory', function($q, $http, $timeout) {
         getForecast: () => {
             if (!forecastPromise) {
                 var deferred = $q.defer();
-                getCurrentPosition().then(function(val) { return getWeatherPromise(val, 'forecast', forecastDataPromise); })
-                  .then(function(val) { deferred.resolve(val);})
+                getCurrentPosition()
+                  .then(function(val) {
+                    return getWeatherPromise(val, 'forecast', forecastDataPromise);
+                  })
+                  .then(function(val) {
+                    deferred.resolve(val);
+                  })
                 forecastPromise = deferred.promise;
             }
             return forecastPromise;
-        },
+        }
     };
 
 }); //end factory
