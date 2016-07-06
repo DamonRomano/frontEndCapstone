@@ -44,7 +44,7 @@ app.factory('WeatherFactory', function($q, $http, $timeout) {
                 + position.coords.longitude
                 + ".json";
       return $http.get(url);
-  }
+  };
   return {
     getConditions: () => {
       if (!conditionsPromise) {
@@ -73,6 +73,17 @@ app.factory('WeatherFactory', function($q, $http, $timeout) {
         forecastPromise = deferred.promise;
       }
       return forecastPromise;
-    }
+    },
   };
+
+
+    // getOtherCityConditions: () => {
+    //   if (!otherCityConditionsPromise) {
+    //     var deferred = $q.defer();
+    //     getCityAndStateFromUserInput()
+    //       .then (function(val) {
+    //         return get
+    //       })
+    //   }
+    // }
 }); //end factory

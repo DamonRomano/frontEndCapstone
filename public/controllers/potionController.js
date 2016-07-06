@@ -17,7 +17,6 @@ app.controller('PotionController', function($scope, $http, $location, $timeout, 
     var days = val.data.forecast.txt_forecast.forecastday;
     var forecastBlocks = getThreeDayForecastList(days);
     $scope.forecast = forecastBlocks;
-    // $scope.$apply();
   });
 
   $scope.navigation = function(locationString) {

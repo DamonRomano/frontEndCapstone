@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-11 text-justify">
+    <div class="croneFlavor col-xs-12 text-justify">
       <p>   You walk down the dusty path from your home near the edge of the village. 'Fore long, the path begins to trace the edge of a yellow wood. About a quarater-mile from home now and the path diverges; one road into the wood, th'other wraps back around to the crazy old milkman's place.</p>
 
-      <p>Old fool's always singing at the top of his lungs about being rich while conspicuously NOT milking his damned cows.</p>
+      <!-- <p>Old fool's always singing at the top of his lungs about being rich while conspicuously NOT milking his damned cows.</p> -->
 
-      <p>At any rate, you take the road less traveled-by, deep into the wood.  You follow as it bends into the undergrowth.</p>
+      <p>Taking the road less traveled-by, you follow as it bends into the undergrowth.</p>
 
-      <p>A bit after, you come upon the Home for Old Crones, a dilapidated neo-Colonial number with stereotypical flaking white paint and an even-more-stereotypical sense of foreboding.</p>
+      <p>You come upon the Home for Old Crones, a dilapidated neo-Colonial number with stereotypical flaking white paint and an even-more-stereotypical sense of foreboding.</p>
 
       <p>One particular crone separates herself from the...what?... Gathering? Throng? Flock? What to they call multiple crones?</p>
 
@@ -15,36 +15,41 @@
 
       <p>A murder of crones.</p>
 
-      <p>Crone Prime looks about ready to speak to you, but pauses.  She looks with conspiratorial glee to her left...to her right. And then she opens her housecoat.</p>
+      <p>Crone Prime looks about ready to speak to you, but pauses.  She looks with conspiratorial glee to her left...to her right. And then she lasciviously opens her housecoat.</p>
 
       <p>"Hey, Stranger! Whadda ya buyin'?"</p>
     </div>
+    <div class="row">
+      <div class="col-xs-12 text-justify">
+        <p>
+          <!-- On click, fade-in 3-Day forecast. -->
+          <button class="btn btn-default btn-md active btn-block"
+                  ng-click="crone.navigation('potion')">
+            <h3>Potion of Foretelling.</h3>
+            <h4>She promises that drinking this will let you see things no one else can see...do things no one else can do.</h4>
+          </button>
+        </p>
 
-    <div class="col-xs-4">
-      <p>
-        <!-- On click, fade-in 3-Day forecast. -->
-        <button class="btn btn-default btn-md active"
-                ng-click="crone.navigation('potion')">
-            Potion of Foretelling.
-        </button>
-      </p>
+       <!--  <p>
+          On click, input field appears.  User enters "City, ST" to speak to the talisman and get current conditions in that city.
+          <button class="btn btn-default btn-md active"
+                  ng-click="crone.useTalisman()"
+                  ng-click="openTextBox();"
+                  ng-show="openTextBox == true">
+            <h3>Talisman of Far-Seeing.</h3>
+          </button>
+        </p> -->
 
-      <p>
-        <!-- On click, input field appears.  User enters "City, ST" to speak to the talisman and get current conditions in that city. -->
-        <button class="btn btn-default btn-md active"
-                ng-click="crone.useTalisman()">
-            Talisman of Far-Seeing.
-        </button>
-      </p>
-
-      <p>
-        <!-- Return to Porch/Current Local Weather Conditions -->
-        <button class="btn btn-default btn-md active"
-                ng-click="crone.navigation('porch')">
-            This place is creepy. I'm going back home to sit on the porch.
-        </button>
-      </p>
-      <p ng-bind-html="crone.forecast"></p>
+        <p>
+          <!-- Return to Porch/Current Local Weather Conditions -->
+          <button class="btn btn-default btn-md active btn-block"
+                  ng-click="crone.navigation('porch')">
+            <h3>Nevermind, please. This place is creepy.</h3>
+            <h4>I'm going back home to sit on the porch and watch the earth turn 'round.</h4>
+          </button>
+        </p>
+        <p ng-bind-html="crone.forecast"></p>
+      </div>
     </div>
   </div>
 </div>

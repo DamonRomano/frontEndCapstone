@@ -1,23 +1,24 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-offset-1 col-xs-6">
-      <p>Quaffing (yes, what of it?) the potion, you promtly fall flat on your back. You are compelled to look up, paralyzed. The clouds speed up. Everything blurs and you can see the future of your world...
+    <div class="col-xs-6 text-justify">
+      <p>The Crone sells you a small flask, in exchange for your last (and very favorite) chicken.</p>
+      <p>Quaffing the potion, you promtly fall flat on your back. You are compelled to look up, paralyzed. The clouds speed up. Everything blurs and you can see the future of your world...
       </p>
     </div>
-    <div class="col-xs-4">
+    <div class="col-xs-3">
       <p>
         <!-- Return to The Old Crone - crone.html -->
         <button class="btn btn-default btn-md active"
                 ng-click="navigation('crone')">
-            <p>I've seen enough of the future.</p>
-            <p>No one should carry such a burden!</p>
+            <h3>I've seen enough of the future.</h3>
+            <h4>No one should carry such a burden!</h4>
         </button>
       </p>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-offset-1 col-xs-10">
-      <p ng-bind-html="forecast"></p>
+    <div class="col-xs-12">
+      <p ng-bind-html="forecast" class="text-justify"></p>
     </div>
   </div>
 </div>
