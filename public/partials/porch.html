@@ -1,25 +1,28 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 text-justify">
-      <p>You step out onto the porch, stretching and shaking off the last tendrils of that ill dream. And not like "Licesed To Ill", either. Actually bad, but not like Michael Jackson's "Bad"....Nevemind; what's the weather look like?
+    <div class="col-xs-4 text-justify">
+      <p>You step out onto the porch, stretching and shaking off the last tendrils of that ill dream. And not like "Licesed To Ill", either, which was a great album. I mean, Actually Bad, but not like Michael Jackson's "Bad", which was also a great record. ..Nevemind; what's the weather look like?
       </p>
-      <!-- porch. user sees current local weather conditions -->
+      <!-- user sees current local weather conditions -->
       <p>{{porch.temperature}}{{porch.humidity}}{{porch.wind}}</p>
-      <p>
-
-      </p>
     </div>
-    <div class="col-xs-4">
-      <!-- button sends user back inside from porch. Basically allows user to see another random dream flavor text. -->
-      <button class="btn btn-default btn-md active"
-              ng-click="porch.navigation('dream')">
-          Go Back to Bed
+    <div class="col-xs-6">
+      <!-- button sends user to Crone where user can get local forecast -->
+      <button class="col-xs-3 btn btn-default btn-md
+                    active btn-block text-justify"
+              ng-click="porch.navigation('crone')">
+          <h3>Visit the Old Crone</h3>
+          <h4>Yeah? Best idea you've got for your day?</h4>
       </button>
 
-      <!-- button sends user to Crone where user can get local forecasts (3-day and 10-day) and current conditions in other cities via talisman input. -->
-      <button class="btn btn-default btn-md active"
-              ng-click="porch.navigation('crone')">
-          Visit the Old Crone
+      <!-- button sends user back inside from porch. Basically allows user to see another random dream flavor text. -->
+      <button class="col-xs-3 btn btn-default btn-md
+                    active text-justify text-wrap btn-block"
+              ng-click="porch.navigation('dream')">
+          <h3>Go Back to Bed</h3>
+          <h4>No no; you're right.</h4>
+          <h4>That sounds, in fact, like a horrid idea.</h4>
+          <h4>It lacks a sense of self-preservation.</h4>
       </button>
     </div>
   </div>
